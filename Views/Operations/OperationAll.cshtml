@@ -1,0 +1,23 @@
+﻿@model Calculator.Models.OperationModel
+
+<form asp-action="OperationAll" asp-controller="Operations" method="post" class="mt-5">
+    <div class="form-group">
+        <label >Enter value of x:</label>
+        <input type="number" asp-for="@Model.x" class="form-control" id="x" />
+    </div>
+    <div class="form-group">
+        <label>Enter value of y:</label>
+        <input type="number" asp-for="@Model.y" class="form-control" id="y" />
+    </div>
+    <div>
+        <input type="hidden" asp-for="operation" />
+        <button type="submit" name="operation" value="add" class="btn btn-primary">Add</button>
+        <button type="submit" name="operation" value="subtract" class="btn btn-secondary">Subtract</button>
+        <button type="submit" name="operation" value="multiply" class="btn btn-success">Multiply</button>
+        <button type="submit" name="operation" value="divide" class="btn btn-danger">Divide</button>
+    </div>
+</form>
+
+<div class="mt-4">
+    <p class="alert alert-info">Result of Operation: @Model.z</p>
+</div>
